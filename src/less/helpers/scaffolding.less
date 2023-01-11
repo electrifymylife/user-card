@@ -1,0 +1,49 @@
+@font-face {
+  font-weight: normal;
+  font-family: "Heebo";
+  font-style: normal;
+  font-display: swap;
+  src: url("/src/fonts/Heebo-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Heebo";
+  font-style: normal;
+  font-display: swap;
+  src: url("/src/fonts/Heebo-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Heebo";
+  font-style: normal;
+  font-display: swap;
+  src: url("/src/fonts/Heebo-Black.ttf") format("ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @white;
+  .text();
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  .style-none();
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
