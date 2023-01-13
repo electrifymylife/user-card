@@ -1,0 +1,125 @@
+.portfolio {
+  .container();
+  background: inherit;
+  padding-top: 15px;
+  padding-bottom: 85px;
+
+  @media (max-width: @mobile-bp) {
+    padding-top: 0;
+    padding-bottom: 150px;;
+  }
+
+  &__inner {
+    .inner-container();
+  }
+
+  &__title {
+    .text();
+    font-size: 22px;
+    line-height: 60px;
+    margin-bottom: 20px;
+
+    @media (max-width: @mobile-bp) {
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  &__item-link {
+    display: block;
+    padding-bottom: 30px;
+    border-bottom: 1px solid @light-gray;
+    &:not(:first-of-type) {
+      padding-top: 30px;
+
+      @media (max-width: @mobile-bp) {
+        display: none;
+      }
+    }
+
+    @media (max-width: @mobile-bp) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 30px;
+
+    @media (max-width: @mobile-bp) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.feat-work {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  @media (max-width: @mobile-bp) {
+    flex-direction: column-reverse;
+  }
+
+  &__info {
+    margin-left: 20px;
+
+    @media (max-width: @mobile-bp) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    .title();
+    font-size: 30px;
+    line-height: 44px;
+    margin-bottom: 15px;
+
+    @media (max-width: @mobile-bp) {
+      font-size: 24px;
+      line-height: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__year {
+    font-family: @heebo;
+    font-weight: @black-weight;
+    font-size: 18px;
+    color: @white;
+    background: @dark-blue;
+    padding: 5px 10px;
+    border-radius: 16px;
+    margin-right: 25px;
+
+    @media (max-width: @mobile-bp) {
+      font-size: 16px;
+      margin-right: 20px;
+    }
+  }
+
+  &__tag {
+    .text();
+    font-size: 20px;
+    line-height: 29px;
+    color: @gray;
+
+    @media (max-width: @mobile-bp) {
+      font-size: @main-font-size;
+      line-height: @main-line-height;
+    }
+  }
+
+  &__text {
+    .text();
+  }
+
+  &__img {
+    width: 246px;
+
+    @media (max-width: @mobile-bp) {
+      width: 100%;
+    }
+  }
+}

@@ -30,8 +30,34 @@ function compileLess() {
     .pipe(dest('dist'))
 }
 
+function copyImg() {
+  return src([
+    "src/img/**/*.{png,jpg,svg}"
+  ])
+    .pipe(dest("dist/media/img"));
+}
+
+function copyFonts() {
+  return src([
+    "src/fonts/**"
+  ])
+    .pipe(dest("dist/media/fonts"));
+}
+
+function copyLibs() {
+  return src([
+    "src/libs/**"
+  ])
+    .pipe(dest("dist/libs"));
+}
+
 function clear() {
   return src('dist', {read: false})
+    .pipe(clean())
+}
+
+function clearMedia() {
+  return src('dist/media', {read: false})
     .pipe(clean())
 }
 
@@ -44,5 +70,7 @@ function serve() {
   watch('src/less/**/*.less', series(compileLess)).on('change', sync.reload)
 }
 
-exports.serve = series(clear, compileLess, html, serve)
+exports.serve = series(clear, copyImg, copyFonts, copyLibs, compileLess, html, serve)
+
 exports.clear = clear
+exports.clearMedia = clearMedia
