@@ -53,6 +53,12 @@
     border-radius: 4px;
     width: 49%;
 
+    &:hover, &:focus {
+      .blog-post__title {
+        text-decoration: underline;
+      }
+    }
+
     @media (max-width: @mobile-bp) {
       width: 100%;
       margin-bottom: 20px;
