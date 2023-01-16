@@ -93,25 +93,30 @@
   }
 
   &__info {
-    display: table;
     .text();
+    font-size: 0;
+    margin-bottom: 10px;
+  }
+
+  &__time {
     font-size: 18px;
     line-height: 26px;
-    margin-bottom: 10px;
-
+    padding-right: 25px;
+    border-right: 1px solid @black;
     @media (max-width: @tablet-bp) {
       font-size: @main-font-size;
       line-height: @main-line-height;
     }
   }
 
-  &__time {
-    padding-right: 25px;
-    border-right: 1px solid @black;
-  }
-
   &__tags {
+    font-size: 18px;
+    line-height: 26px;
     padding-left: 25px;
+    @media (max-width: @tablet-bp) {
+      font-size: @main-font-size;
+      line-height: @main-line-height;
+    }
   }
 
   &__preview {
