@@ -8,8 +8,6 @@ const autoprefixer = require('gulp-autoprefixer')
 const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
 const newer = require('gulp-newer')
-const fonter = require('gulp-fonter')
-const ttf2woff2 = require('gulp-ttf2woff2')
 const concat = require('gulp-concat')
 const clean = require('gulp-clean')
 const sync = require('browser-sync').create()
@@ -44,21 +42,21 @@ function js() {
 
 function img() {
   return src('src/img/**/*.{png,jpg,svg}')
-    .pipe(newer('dist/media/img'))
+    .pipe(newer('dist/assets/img'))
     .pipe(imagemin({
       verbose: true
     }))
-    .pipe(dest('dist/media/img'))
+    .pipe(dest('dist/assets/img'))
 }
 
 function copyFonts() {
   return src('src/fonts/**')
-    .pipe(dest('dist/media/fonts'));
+    .pipe(dest('dist/assets/fonts'));
 }
 
 function copyLibs() {
   return src('src/libs/**')
-    .pipe(dest('dist/media/libs'));
+    .pipe(dest('dist/assets/libs'));
 }
 
 function clear() {
@@ -66,8 +64,8 @@ function clear() {
     .pipe(clean())
 }
 
-function clearMedia() {
-  return src('dist/media', {read: false})
+function clearAssets() {
+  return src('dist/assets', {read: false})
     .pipe(clean())
 }
 
@@ -87,4 +85,4 @@ function serve() {
 exports.serve = series(clear, copyFonts, copyLibs, img, js, compileLess, html, serve);
 
 exports.clear = clear
-exports.clearMedia = clearMedia
+exports.clearAssets = clearAssets
