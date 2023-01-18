@@ -1,0 +1,81 @@
+footer {
+  .container();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: inherit;
+  padding-top: 50px;
+  padding-bottom: 200px;
+
+  @media (max-width: @mobile-bp) {
+    padding-bottom: 50px;
+  }
+}
+
+.soc-icons {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    min-width: 230px;
+  }
+
+  &__item {
+
+    &_fb {
+      &:hover,
+      &:focus {
+        path {
+          fill: #4267B2;
+        }
+      }
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
+    &_inst {
+      &:hover,
+      &:focus {
+        path {
+          fill: #c13584;
+        }
+      }
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
+    &_twi {
+      &:hover,
+      &:focus {
+        path {
+          fill: #1DA1F2;
+        }
+      }
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
+    &_lin {
+      &:hover,
+      &:focus {
+        path {
+          fill: #0e76a8;
+        }
+      }
+      &:active {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.copyright {
+  font-family: @heebo;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: @main-weight;
+  color: @dark-blue;
+  margin-top: 25px;
+}

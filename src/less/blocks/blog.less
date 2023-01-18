@@ -1,0 +1,125 @@
+.blog {
+  .container();
+  background: @light-blue;
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  @media (max-width: @mobile-bp) {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  &__wrap {
+    .inner-container();
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: @mobile-bp) {
+      flex-direction: column;
+    }
+  }
+
+  &__recent {
+    .text();
+    font-size: 22px;
+    line-height: 60px;
+    margin-bottom: 20px;
+
+    @media (max-width: @mobile-bp) {
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  &__all {
+    .text();
+    color: @cyan-blue;
+    margin-top: 20px;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+
+    @media (max-width: @mobile-bp) {
+      display: none;
+    }
+  }
+
+  &__item-link {
+    background: @white;
+    color: @night-blue;
+    box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
+    border-radius: 4px;
+    width: 49%;
+
+    &:hover, &:focus {
+      .blog-post__title {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: @mobile-bp) {
+      width: 100%;
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.blog-post {
+  padding: 25px;
+
+  @media (max-width: @mobile-bp) {
+    padding: 20px;
+  }
+
+  &__title {
+    .title();
+    font-size: 26px;
+    line-height: 38px;
+    margin-bottom: 20px;
+    min-height: 70px;
+
+    @media (max-width: @mobile-bp) {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      min-height: auto;
+    }
+  }
+
+  &__info {
+    .text();
+    font-size: 0;
+    margin-bottom: 10px;
+  }
+
+  &__time {
+    font-size: 18px;
+    line-height: 26px;
+    padding-right: 25px;
+    border-right: 1px solid @black;
+    @media (max-width: @tablet-bp) {
+      font-size: @main-font-size;
+      line-height: @main-line-height;
+    }
+  }
+
+  &__tags {
+    font-size: 18px;
+    line-height: 26px;
+    padding-left: 25px;
+    @media (max-width: @tablet-bp) {
+      font-size: @main-font-size;
+      line-height: @main-line-height;
+    }
+  }
+
+  &__preview {
+    .text();
+  }
+}
